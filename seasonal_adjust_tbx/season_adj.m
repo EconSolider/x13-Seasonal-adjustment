@@ -7,7 +7,7 @@ function x_dseason=season_adj(x,time_start)
 % https://vermandel.fr/2022/12/30/deseasonalize-time-series-with-x13-in-matlab/
 
 currentPath = pwd;
-cd 'D:\MAT_Toolkits\seasonal_adjust_tbx\waste'
+% cd 'D:\MAT_Toolkits\seasonal_adjust_tbx\waste'
 
 % load dseries object
 get_dynare_src = strrep(which('dynare'),'dynare.m','');
@@ -30,7 +30,7 @@ o.run();
 % extract the multiplicative seasonal pattern
 season_x = o.results.d10;
 x_dseason= (o.y.data)./(season_x.data);
-delete('*.*');
+% delete('*.*');
 
 cd(currentPath);
 end
